@@ -20,4 +20,4 @@ Enter height, mass and shape of an object and this tool will provide
 
 Feel free to fork this project for your own studies.
 
-If you improve this tool in any way a pull request would be very much appreciated ;)
+If you improve this tool in any way a pull request would be very much appreciated ✌️
