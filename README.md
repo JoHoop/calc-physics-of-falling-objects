@@ -1,4 +1,4 @@
-<img alt="Avatar" src="https://raw.githubusercontent.com/JoHoop/calc-physics-of-falling-objects/master/img/android-icon-192x192.png" />
+<img alt="Avatar" src="https://raw.githubusercontent.com/JoHoop/calc-physics-of-falling-objects/master/img/android-icon-192x192.png" width="100" />
 
 # Tool to calculate parameters of falling objects
 
