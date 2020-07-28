@@ -1,0 +1,35 @@
+A tool to study falling objects
+
+Aerodynamic drag is a restraining force acting opposite to the downward motion of any falling object and is exerted by the air resistance (friction). If the fall is from sufficient altitude an object attains a terminal velocity, which equals the objects weight. Terminal velocity is greater at high altitude, where extremely thin air presents less drag force. This highest vertical speed occurs when the magnitude of the drag (force of resistance) equals the gravitational pull the object is subjected to: the object ceases to accelerate and continues falling at the terminal velocity as described by Newton's first law of motion.
+
+
+What does this tool do?
+This tool depends on certain properties of the object
+
+The drag coefficient is a number which aerodynamicists use to model all of the complex dependencies of drag on shape, inclination and compressibility effects in the flow. For airflow near and faster than the speed of sound, there is a large increase in the drag coefficient because of the formation of shock waves on the object. So be very careful when interpreting results with large terminal velocities.
+
+ As Δt approaches zero (becomes extremely small), the accuracy and effort of the calculation increases
+
+ Input variable can be declared here
+
+Mass <i>m</i> in kg
+Initial altitude <i>h</i> in m
+Drag coefficient <i>C<sub>w</sub></i>
+Cross-sectional area <i>A</i> in m<sup>2</sup>
+Time step Δ<i>t</i> in s
+Numerical precision (Number of significant digits)
+
+Calculate time needed to reach the terminal velocity
+Assume no change in air density with altitude
+Assume an object falling from rest
+Check input for validity
+
+These functions will be executed even when your input is not valid
+
+Measure terminal velocity (The terminal velocity phenomenon shows up as a horizontal asymptote in the graph)
+Measure fall time
+Write table
+Draw graph
+
+
+The purpose of this tool is to calculate the terminal velocity, the fall time, force, speed and acceleration of an object to help one understand the physical aspects of fall

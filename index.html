@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Fall mit Luftwiderstand</title>
+  <meta content="Tool für fallende Objekte mit Einberechung der Luftwiderstandskraft" name="Description">
+  <meta content="Fall, Luftwiderstand, Erdbeschleunigung, Gravitationsbeschleunigung, Kraft, Geschwindigkeit, Beschleunigung, Zeit, Grenzgeschwindigkeit, Höhe" name="Keywords">
+  <meta content="Jo" name="Author">
+  <meta content="Copyright © 2018. All rights reserved." name="Copyright">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#00b34d"/>
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="#00b34d" name="msapplication-navbutton-color">
+  <meta content="#00b34d" name="msapplication-TileColor">
+  <meta content="no" name="msapplication-tap-highlight">
+  <link rel="manifest" href="img/manifest.json">
+  <link href="img/apple-icon-76x76.png" rel="shortcut icon">
+  <link href="img/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+  <link href="img/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+  <link href="img/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="img/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+  <link href="img/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  <link href="img/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+  <link href="img/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+  <link href="img/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+  <link href="img/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="img/android-icon-512x512.png" rel="icon" sizes="512x512" type="image/png">
+  <link href="img/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+  <link href="img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="img/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+  <link href="img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <meta content="img/ms-icon-144x144.png" name="msapplication-TileImage">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Material+Icons" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/theme.min.css" rel="stylesheet" type="text/css">
+  <link href="css/material-kit.min.css" rel="stylesheet" type="text/css">
+  <script src="js/calculation.js"></script>
+</head>
+
+<body>
+  <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--waterfall">
+
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Fall mit Luftwiderstand</span>
+      </div>
+
+      <div class="mdl-layout__header-row">
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Inhalt</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="#grundlagenSection">Physikalische Erklärungen</a>
+        <a class="mdl-navigation__link" href="#inputSection">Eingabe der Parameter</a>
+        <a class="mdl-navigation__link" href="#outputSection">Berechnung und Ausgabe</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div class="main">
+          <div class="section section-basic">
+            <div class="container">
+              <div>
+                <h2>Fallende Objekte unter Erdbeschleunigung und Luftwiderstand<h2>
+              </div>
+              <div id="grundlagenSection">
+                <br>
+                <h3>Physikalische Erklärungen</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p>In unserer Atmosphäre verringert der Luftwiderstand bei zunehmender Fallgeschwindigkeit quadratisch die Beschleunigung der Gravitationsfeldstärke („Erdbeschleunigung“), bis eine konstante Grenzgeschwindigkeit erreicht ist. Bei dieser Maximalgeschwindigkeit
+                      sind Luftwiderstandskraft und Schwerkraft gerade entgegengesetzt gleich groß, womit keine weitere Beschleunigung stattfindet.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p>Dieses Tool berechnet diese Grenzgeschwindigkeit und die Falldauer. Als Tabelle oder Funktionen im Koordinatensystem können die momentane Höhe, Geschwindigkeit, Kraft und Beschleunigung ausgegeben werden.
+                    <br><br> Die Berechnung erfordert einige spezielle Parameter, die hier kurz erklärt werden:</p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="row">
+                <div class="col-md-6">
+                  <div id="acordeon">
+                    <div class="panel-group" id="accordion">
+
+                      <div class="panel panel-border panel-default">
+                        <div class="panel-heading" role="tab" id="heading1">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-controls="collapse0">
+                            <h4 class="panel-title">
+                                Masse
+                                <i class="material-icons">keyboard_arrow_down</i>
+                              </h4>
+                          </a>
+                        </div>
+                        <div id="collapse0" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <p>Die Masse (Zeichen: <i>m</i>, Einheit: kg) ist eine Eigenschaft der Materie und ein Maß dafür, wie stark ein Körper ganz allgemein von Gravitationsfeldern beeinflusst wird und wie sehr er sich Beschleunigungen widersetzt (Trägheit: das Bestreben eines Körpers ohne äußere einwirkende Kräfte im derzeitigen Bewegungszustand zu verharren).</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-border panel-default">
+                        <div class="panel-heading" role="tab" id="heading4">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                            <h4 class="panel-title">
+                                Querschnittsfläche
+                                <i class="material-icons">keyboard_arrow_down</i>
+                              </h4>
+                          </a>
+                        </div>
+                        <div id="collapse4" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <p>Die Querschnittsfläche (Zeichen: <i>A</i>, Einheit: m<sup>2</sup>) ist ein zweidimensionales Maß für die Größe der windanfälligen Fläche (Stirnfläche bei Fahrzeugen) eines sich bewegenden Objekts.</p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div id="acordeon">
+                    <div class="panel-group" id="accordion">
+
+                      <div class="panel panel-border panel-default">
+                        <div class="panel-heading" role="tab" id="heading3">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-controls="collapse3">
+                            <h4 class="panel-title">
+                                Luftwiderstandsbeiwert
+                                <i class="material-icons">keyboard_arrow_down</i>
+                              </h4>
+                          </a>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <p>Der Luftwiderstandsbeiwert (Zeichen: <i>c<sub>w</sub></i>) oder auch Strömungswiderstandskoeffizient ist dimensionslos und quantifiziert die aerodynamische Güte (Windschlüpfrigkeit) einer Körperform, also wie gut die Luft
+                              an dem fallenden Gegenstand vorbeiströmen kann. Die <i>c<sub>w</sub></i>-Werte typischer Körperformen sehen etwa so aus:
+                              <ul class="demo-list-item mdl-list">
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Pinguin: 0.03
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Tropfenform  (Stromlinienkörper): 0.05
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Fallschirmspringer (senkrecht): 0.1
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Kugel: 0.2 - 0.45
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Fallschirmspringer (waagerecht): 0.28
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    PKW Smart: 0.37
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Gleitschirm: 0.6
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Motorrad: 0.7
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Mensch (stehend): 0.78
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    LKW: 0.8
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    Fallschirm: 0.9 - 1.4
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item">
+                                  <span class="mdl-list__item-primary-content">
+                                    dünne ebene Platte (senkrecht zur Strömung): 1.11
+                                  </span>
+                                </li>
+                              </ul>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-border panel-default">
+                        <div class="panel-heading" role="tab" id="heading5">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-controls="collapse5">
+                            <h4 class="panel-title">
+                                Zeitänderung
+                                <i class="material-icons">keyboard_arrow_down</i>
+                              </h4>
+                          </a>
+                        </div>
+                        <div id="collapse5" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <p>Die Zeitänderung (Zeichen: Δ<i>t</i>, Einheit: s) steht für einen Moment, also die Zeit zwischen zwei Rechenschritten (Zeitdifferenz). Je kleiner Δt ist, desto genauer wird das Ergebnis, doch durch mehr zu verarbeitende Werte sind der Rechenaufwand
+                              die Ausführungsdauer größer.</p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="inputSection">
+                <br>
+                <br>
+                <br>
+                <div class="title">
+                  <h3>Eingabe der Parameter</h3>
+                  <p>Hier folgen sind die Eingabefelder für die zuvor erklärten Variablen.</p>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group label-floating">
+                      <label class="control-label">Starthöhe <i>h</i> in m</label>
+                      <input class="form-control" id="h_input" type="text" pattern="[0-9.]*" maxlength="15" value="6500">
+                    </div>
+                    <div class="form-group label-floating">
+                      <label class="control-label">Masse <i>m</i> in kg</label>
+                      <input class="form-control" id="m_input" type="text" pattern="[0-9.]*" maxlength="15" value="85">
+                    </div>
+                    <div class="form-group label-floating">
+                      <label class="control-label">Luftwiderstandsbeiwert <i>c<sub>w</sub></i></label>
+                      <input class="form-control" id="cw_input" type="text" pattern="[0-9.]*" maxlength="15" value="0.3">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group label-floating">
+                      <label class="control-label">Querschnittsfläche <i>A</i> in m<sup>2</sup></label>
+                      <input class="form-control" id="A_input" type="text" pattern="[0-9.]*" maxlength="15" value="0.7">
+                    </div>
+                    <div class="form-group label-floating">
+                      <label class="control-label">Zeitänderung Δ<i>t</i> in s</label>
+                      <input class="form-control" id="dt_input" type="text" pattern="[0-9.]*" maxlength="15" value="0.1">
+                    </div>
+                    <div class="form-group label-floating">
+                      <label class="control-label">Dezimalstellen nach dem Komma</label>
+                      <input class="form-control" id="dp_input" type="text" pattern="[0-9]*" maxlength="15" value="4">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="checkbox">
+                      <label>
+                          <input checked id="tvmaxCheckbox" name="optionsCheckboxes" type="checkbox">
+                          Benötigte Zeit zum Erreichen der Grenzgeschwindigkeit berechnen
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                          <input checked id="rhoKonstantCheckbox" name="optionsCheckboxes" type="checkbox">
+                          Veränderung der Luftdichte in Abhängigkeit der Höhe vernachlässigen
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                          <input checked disabled id="inputCheckCheckbox" name="optionsCheckboxes" type="checkbox">
+                          Eingabe auf Korrektheit prüfen
+                        </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="outputSection">
+                <br>
+                <br>
+                <br>
+                <div class="title">
+                  <h3>Berechnung und Ausgabe</h3>
+                  <p>Die Funktionen zur Berechnung werden auch bei inkorrekter Eingabe ausgeführt.</p>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-primary" onclick="inputCheck();calcMaxSpeed()" id="show-toast" data-target="#speedOutputModal" data-toggle="modal">Grenzgeschwindigkeit berechnen</button>
+                    <br>
+                    <button class="btn btn-primary" onclick="inputCheck();calcTime()" data-target="#timeOutputModal" data-toggle="modal">Falldauer berechnen</button>
+                    <br>
+                    <button class="btn btn-primary" onclick="inputCheck();writeTable()" type="button">Wertetabelle ausgeben</button>
+                    <br>
+                    <button class="btn btn-primary" onclick="inputCheck();plotData()" type="button">Koordinatensystem zeichnen</button>
+                    <br>
+                    <div id="toast-example" class="mdl-js-snackbar mdl-snackbar">
+                      <div class="mdl-snackbar__text"></div>
+                      <button class="mdl-snackbar__action" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+                <div id="Graph"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <nav class="pull-left">
+            <ul>
+              <li>
+                <a href="">Repo</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="copyright pull-right">
+            2020
+          </nav>
+        </div>
+      </footer>
+    </main>
+    <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="speedOutputModal" role="dialog" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" class="close" data-dismiss="modal" type="button"><i class="material-icons">clear</i></button>
+            <h3 class="modal-title">Die Grenzgeschwindigkeit</h3>
+          </div>
+          <div class="modal-body">
+            <span id="speed_output"></span>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default btn-simple" onclick="window.location.href='https://de.wikipedia.org/wiki/Fall_mit_Luftwiderstand'" type="button">More information</button>
+            <button class="btn btn-danger btn-simple" data-dismiss="modal" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="timeOutputModal" role="dialog" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" class="close" data-dismiss="modal" type="button"><i class="material-icons">clear</i></button>
+            <h3 class="modal-title">Die Falldauer</h3>
+          </div>
+          <div class="modal-body">
+            <span id="time_output"></span>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default btn-simple" onclick="window.location.href='https://de.wikipedia.org/wiki/Fall_mit_Luftwiderstand'" type="button">More information</button>
+            <button class="btn btn-danger btn-simple" data-dismiss="modal" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Core scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/material.min.js"></script>
+  <script src="js/bootstrap-selectpicker.js"></script>
+  <script src="js/plotly-latest.min.js"></script>
+  <script src="js/material-kit.min.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      var snackbarContainer = document.querySelector('#toast-example');
+      var showToastButton = document.querySelector('#show-toast');
+      showToastButton.addEventListener('click', function() {
+        'use strict';
+        var data = {
+          message: 'Eingabeüberprüfung durchgeführt!'
+        };
+        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+      });
+    }());
+  </script>
+</body>
+</html>
