@@ -3,7 +3,7 @@
 # Tool to calculate parameters of falling objects
 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/JoHoop/calc-physics-of-falling-objects/blob/master/LICENSE)
-[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://github.com/JoHoop/calc-physics-of-falling-objects/graphs/contributors/)
+[![GitHub contributors](https://img.shields.io/github/contributors/JoHoop/calc-physics-of-falling-objects.svg)](https://github.com/JoHoop/calc-physics-of-falling-objects/graphs/contributors/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/JoHoop/calc-physics-of-falling-objects/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
